@@ -24,35 +24,28 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation Libs.kotlinStdlib
+    implementation Libs.kotlinCoroutinesCore
+    implementation Libs.kotlinCoroutinesAndroid
 
-    // asynchronous
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.0.1"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.0.1"
+    implementation Libs.okhttp3
+    implementation Libs.retrofit
+    implementation Libs.retrofitConverterMoshi
+    implementation Libs.moshiKotlin
+    kapt KaptLibs.moshiKotlinCodegen
 
-    // network
-    implementation "com.squareup.okhttp3:okhttp:3.12.0"
-    implementation "com.squareup.retrofit2:retrofit:2.5.0"
-    implementation 'com.squareup.retrofit2:converter-moshi:2.5.0'
-    implementation "com.squareup.moshi:moshi-kotlin:1.8.0"
-    kapt "com.squareup.moshi:moshi-kotlin-codegen:1.8.0"
+    implementation Libs.appcompat
 
-    // app-compat
-    implementation 'androidx.appcompat:appcompat:1.0.2'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation Libs.roomRuntime
+    kapt KaptLibs.roomCompiler
+    implementation Libs.lifecycleExtensions
+    kapt KaptLibs.lifecycleCompiler
+    implementation Libs.pagingRuntime
 
-    // Local DB
-    implementation "androidx.room:room-runtime:2.0.0"
-    kapt "androidx.room:room-compiler:2.0.0"
+    implementation Libs.constraintLayout
+    implementation Libs.recyclerView
 
-    // ViewModel and LiveData
-    implementation "androidx.lifecycle:lifecycle-extensions:2.0.0"
-    kapt "androidx.lifecycle:lifecycle-compiler:2.0.0"
-
-    // Paging
-    implementation "androidx.paging:paging-runtime:2.0.0"
-
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test:runner:1.1.0'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
+    testImplementation TestLibs.junit
+    testImplementation TestLibs.testRunner
+    testImplementation TestLibs.espressoCore
 }
