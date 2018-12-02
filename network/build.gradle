@@ -1,0 +1,39 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion BuildTarget.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion BuildTarget.minSdkVersion
+        targetSdkVersion BuildTarget.targetSdkVersion
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            consumerProguardFiles 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation Libs.kotlinStdlib
+    implementation Libs.kotlinCoroutinesCore
+    implementation Libs.kotlinCoroutinesAndroid
+
+    implementation Libs.okhttp3
+    implementation Libs.retrofit
+    implementation Libs.retrofitConverterMoshi
+    implementation Libs.moshiKotlin
+    kapt KaptLibs.moshiKotlinCodegen
+
+    testImplementation TestLibs.junit
+    androidTestImplementation TestLibs.testRunner
+    androidTestImplementation TestLibs.espressoCore
+}

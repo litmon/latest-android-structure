@@ -4,11 +4,12 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion BuildTarget.compileSdkVersion
+
     defaultConfig {
         applicationId "com.litmon.app.latestandroidstructure"
-        minSdkVersion 21
-        targetSdkVersion 28
+        minSdkVersion BuildTarget.minSdkVersion
+        targetSdkVersion BuildTarget.targetSdkVersion
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -24,15 +25,11 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
+    implementation project(':network')
+
     implementation Libs.kotlinStdlib
     implementation Libs.kotlinCoroutinesCore
     implementation Libs.kotlinCoroutinesAndroid
-
-    implementation Libs.okhttp3
-    implementation Libs.retrofit
-    implementation Libs.retrofitConverterMoshi
-    implementation Libs.moshiKotlin
-    kapt KaptLibs.moshiKotlinCodegen
 
     implementation Libs.appcompat
 

@@ -1,3 +1,10 @@
+@Suppress("UNUSED")
+object BuildTarget {
+    const val compileSdkVersion = 28
+    const val targetSdkVersion = 28
+    const val minSdkVersion = 21
+}
+
 object Versions {
     const val kotlin = "1.3.10"
     const val kotlinCoroutines = "1.0.1"
