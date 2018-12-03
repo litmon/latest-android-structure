@@ -42,6 +42,9 @@ dependencies {
     implementation Libs.constraintLayout
     implementation Libs.recyclerView
 
+    implementation Libs.glide
+    kapt KaptLibs.glideCompiler
+
     testImplementation TestLibs.junit
     testImplementation TestLibs.testRunner
     testImplementation TestLibs.espressoCore

@@ -12,6 +12,7 @@ object Versions {
     const val moshi = "1.8.0"
     const val room = "2.0.0"
     const val lifecycle = "2.0.0"
+    const val glide = "4.8.0"
 }
 
 @Suppress("UNUSED")
@@ -39,6 +40,8 @@ object Libs {
     const val constraintLayout = "androidx.constraintlayout:constraintlayout:1.1.3"
     const val recyclerView = "androidx.recyclerview:recyclerview:1.0.0"
     const val material = "androidx.material:material:1.0.0"
+
+    const val glide = "com.github.bumptech.glide:glide:${Versions.glide}"
 }
 
 @Suppress("UNUSED")
@@ -46,6 +49,7 @@ object KaptLibs {
     const val moshiKotlinCodegen = "com.squareup.moshi:moshi-kotlin-codegen:${Versions.moshi}"
     const val roomCompiler = "androidx.room:room-compiler:${Versions.room}"
     const val lifecycleCompiler = "androidx.lifecycle:lifecycle-compiler:${Versions.lifecycle}"
+    const val glideCompiler = "com.github.bumptech.glide:compiler:${Versions.glide}"
 }
 
 @Suppress("UNUSED")
